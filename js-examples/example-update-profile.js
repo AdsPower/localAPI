@@ -1,0 +1,41 @@
+const axios = require('axios');
+const data = {
+  "user_id": "XX",
+  "name": "test",
+  "domain_name": "facebook.com",
+  "repeat_config": [
+    "0"
+  ],
+  "open_urls": [
+    "http://www.baidu.com",
+    "https://www.google.com"
+  ],
+  "country": "us",
+  "remark": "remark",
+  "fingerprint_config": {
+    "webrtc": "proxy",
+    "do_not_track": "true",
+    "hardware_concurrency": "default",
+    "device_memory": "default"
+  },
+  "user_proxy_config": {
+    "proxy_soft": "no_proxy"
+  }
+};
+
+const config = {
+  method: 'post',
+  url: 'http://local.adspower.net:50325/api/v1/user/update',
+  headers: { 
+    'Content-Type': 'application/json'
+  },
+  data : data
+};
+
+axios(config)
+.then(function (response) {
+  console.log(JSON.stringify(response.data));
+})
+.catch(function (error) {
+  console.log(error);
+});
