@@ -1,3 +1,4 @@
+import json
 import requests
 
 url = "http://local.adspower.net:50325/api/v1/group/create"
@@ -9,6 +10,6 @@ headers = {
   'Content-Type': 'application/json'
 }
 
-response = requests.request("POST", url, headers=headers, data=payload)
+response = requests.request("POST", url, headers=headers, json=payload)
 
 print(response.text)

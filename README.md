@@ -2,7 +2,6 @@
 AdsPower supports Local API, which has functions like reading and writing account configuration information, opening and closing browsers, searching for accounts. Besides, it can cooperate with Selenium and Puppeteer to execute browser operations automatically.
 
 <br />
-<br />
 
 > ## How to Use AdsPower Local API
 
@@ -20,11 +19,10 @@ AdsPower supports Local API, which has functions like reading and writing accoun
  - At the same time, it supports the mode of no-interface api-key to start the Local API service. For details, see: [Help center](https://help.adspower.net/?page_id=1968&lang=en)
 
  <br />
- <br />
 
 > ## **What the Local API supports**
 
-- [x] <a href="#api_status">API Status</a>
+- [x] API Status
 - [x] Browser Operation
   - [x] Open Browser
   - [x] Close Browser
@@ -33,7 +31,7 @@ AdsPower supports Local API, which has functions like reading and writing accoun
   - [x] Create Group
   - [ ] Update Group(coming soon)
   - [x] Query Group
-- [x] <a href="#profile_management">Profile Management</a>
+- [x] Profile Management
   - [x] Create Profile
   - [x] Update Profile
   - [x] Query Profile
@@ -43,8 +41,7 @@ AdsPower supports Local API, which has functions like reading and writing accoun
 
 <br />
 
-> ### <a name="api_status">API Status</a>
-<br/>
+> ### API Status
 
 ### &ensp; **Basic Information**
 
@@ -70,8 +67,6 @@ AdsPower supports Local API, which has functions like reading and writing accoun
 <br/>
 
 > #### Open Browser
-
-<br/>
 
 ### &ensp; **Basic Information**
 
@@ -127,7 +122,6 @@ AdsPower supports Local API, which has functions like reading and writing accoun
 <br/>
 
 > #### Close Browser 
-<br/>
 
 ### &ensp; **Basic Information**
 
@@ -159,7 +153,6 @@ AdsPower supports Local API, which has functions like reading and writing accoun
 <br/>
 
 > #### Check Open Status
-<br/>
 
 ### &ensp; **Basic Information**
 
@@ -211,7 +204,6 @@ AdsPower supports Local API, which has functions like reading and writing accoun
 <br/>
 
 > #### Create Group
-<br/>
 
 ### &ensp; **Basic Information**
 
@@ -260,7 +252,6 @@ AdsPower supports Local API, which has functions like reading and writing accoun
 
 
 > #### Query Group
-<br/>
 
 ### &ensp; **Basic Information**
 
@@ -320,7 +311,6 @@ AdsPower supports Local API, which has functions like reading and writing accoun
 <br/>
 
 > #### Create Profile
-<br/>
 
 ### &ensp; **Basic Information**
 
@@ -380,7 +370,6 @@ AdsPower supports Local API, which has functions like reading and writing accoun
 
 
 > #### Update Profile
-<br/>
 
 ### &ensp; **Basic Information**
 
@@ -436,7 +425,6 @@ AdsPower supports Local API, which has functions like reading and writing accoun
 <br/>
 
 > #### Query Profile
-<br/>
 
 ### &ensp; **Basic Information**
 
@@ -499,7 +487,6 @@ AdsPower supports Local API, which has functions like reading and writing accoun
 <br/>
 
 > #### Delete Profile
-<br/>
 
 ### &ensp; **Basic Information**
 
@@ -540,7 +527,6 @@ AdsPower supports Local API, which has functions like reading and writing accoun
 <br/>
 
 > #### Update Profile Group
-<br/>
 
 ### &ensp; **Basic Information**
 
@@ -583,7 +569,6 @@ AdsPower supports Local API, which has functions like reading and writing accoun
 <br/>
 
 > #### Delete Profile Cache
-<br/>
 
 ### &ensp; **Basic Information**
 
@@ -616,7 +601,7 @@ AdsPower supports Local API, which has functions like reading and writing accoun
 > ## Parameter Object
 <br/>
 
-> ### user_proxy_config 
+> ### <a name="userProxyConfig">user_proxy_config</a>
 
 ### &ensp; **user_proxy_config:** Information about account proxy configuration. AdsPower supports frequently used proxy software and protocol.
 
@@ -663,7 +648,7 @@ For user_proxy_config to pass corresponding JSON object is required, for example
 
 <br/>
 
-> ### fingerprint_config 
+> ### <a name="fingerprintConfig">fingerprint_config</a>
 
 ### &ensp; **fingerprint_config:** Information about browser fingerprint configuration. AdsPower allows to configure many kinds of fingerprints.
 
@@ -697,7 +682,7 @@ For user_proxy_config to pass corresponding JSON object is required, for example
 |client_rects              |text              |NO              |1              |1              |ClientRects，0：Each browser uses the default ClientRects of the current computer. 1：Add corresponding noise, generate different ClientRects for each browser on the same computer                            |Should upgrade to V3.6.2 or above            
 |device_name_switch              |text              |NO              |0              |0              |Device name, 0: Close, each browser uses the device name of the current computer. 1: Mask, replace your real device name with a suitable value. 2: Custom device name                            |Should upgrade to 3.6.25 or above, when the value is 2, upgrade to V2.4.8.1 and above            
 |device_name              |text              |NO              |-              |abcd              |Custom device name                            |Should upgrade to V2.4.8.1 or above            
-|random_ua              |json              |NO              |-              |{"ua_version":["80"],"ua_system":["Android"]}              |Support specified system, version setting ua. If you pass in a custom ua at the same time, take the custom ua first.                ua_system: system；ua_version: version.                This field is only supported in the create account interface, and the update account interface does not currently support the specified system and version update ua.                See details[random_ua](#randomua)                            |            
+|random_ua              |json              |NO              |-              |{"ua_version":["80"],"ua_system":["Android"]}              |Support specified system, version setting ua. If you pass in a custom ua at the same time, take the custom ua first.                ua_system: system；ua_version: version.                This field is only supported in the create account interface, and the update account interface does not currently support the specified system and version update ua.                See details [random_ua](#randomua)                            |            
 |speech_switch                |text                |NO                |0                |0                |SpeechVoices，0：Each profile uses the default SpeechVoices of the current computer 1：Use a value to replace the real SpeechVoices                                |Should update program version to V3.11.10 or above and kernel version to V2.5.0.9 or above            
 |mac_address_config              |json              |NO              |{"model": "0", address: ""}              |{"model": "2", address: "E4-02-9B-3B-E9-27"}              |                MAC address: Support setting an appropriate value instead of the real MAC address. <br>                model: 0 (use the MAC address of the current computer) , 1 (match an appropriate value instead of the real MAC address) , 2 (custom appropriate value instead of the real MAC address). <br>                address: Custom MAC address, when model is 2, this value needs to be passed in.                            |Should update program version to V4.3.9 or above          
 
@@ -716,7 +701,7 @@ For user_proxy_config to pass corresponding JSON object is required, for example
 ```
 
 
-> ## random_ua
+> ## <a name="randomua">random_ua</a>
 **ua_system**: list, not required. If you don’t fill in, it will be random in all systems by default. Support Android, iOS, Windows, Mac OS X , Linux.<br/>
 **ua_version**: list, not required. If not filled, it will be random in all versions by default. Each system supports the following versions
 <br/>

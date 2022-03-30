@@ -1,4 +1,3 @@
-import profile
 import requests
 
 profileId = 'XX'
